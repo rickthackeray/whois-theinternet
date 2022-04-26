@@ -15,7 +15,8 @@ Function Get-Whois {
             $props = [ordered]@{
                 StartIP = $_.startAddress
                 EndIP = $_.endaddress
-                Name = $response.net.orgRef.name
+                Org = $response.net.orgRef.name
+                Customer = $response.net.customerRef.name
             }
             $outobj = New-Object -TypeName PSObject -Property $props
 
